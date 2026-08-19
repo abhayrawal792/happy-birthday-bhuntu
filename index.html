@@ -68,6 +68,14 @@
         text-decoration: none;
     }
 
+    body::before,
+    body::after {
+        display: none !important;
+        content: "" !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
     #bodyblur {
         opacity: 0;
         position: fixed;
