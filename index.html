@@ -714,11 +714,6 @@
         var tompositif = 'Yes of course!';
         var tomnegatif = 'Yes Yes Yes &#10084;';
 
-        async function menuju() { 
-            pesanwhatsapp = "Happy Birthday " + nama + "! Love you so much, Bhuntu, Sana, Babe ❤️"; 
-            window.location = "https://api.whatsapp.com/send?phone=&text=" + encodeURIComponent(pesanwhatsapp); 
-        }
-
         function initengahan() {
             kadoIn.style = "display:none"; ket.style = "display:none";
             Content.style = "opacity:1;margin-top:0";
@@ -751,8 +746,18 @@
         function bqhilang() { wallpaper.style = "transform: scale(2);"; bodyblur.style = "opacity:.3"; bq.style = "position:relative;transition:all .7s ease;"; }
         function kethalo() { new TypeIt("#halo", { strings: ["" + vketikhalo], startDelay: 50, speed: 40, waitUntilVisible: true, afterComplete: function () { halo.innerHTML = vketikhalo; setTimeout(bqmuncul, 200); }, }).go(); }
 
-        function tombol() { wallpaper.style = "transform: scale(1);"; Tombol.style = "opacity:1;transform: scale(1);"; if (fungsi == 2) { By.innerHTML = "&#128140; Send" } }
-        document.getElementById("By").onclick = function () { if (fungsi == 1) { Tombol.style = ""; fthilang(); fungsi = 0; pertanyaan(); } if (fungsi == 2) { Tombol.style = ""; menuju(); } }
+        function tombol() { wallpaper.style = "transform: scale(1);"; Tombol.style = "opacity:1;transform: scale(1);"; if (fungsi == 2) { By.innerHTML = "&#128150; I Love You &#128150;" } }
+        document.getElementById("By").onclick = function () { 
+            if (fungsi == 1) { 
+                Tombol.style = ""; 
+                fthilang(); 
+                fungsi = 0; 
+                pertanyaan(); 
+            } 
+            if (fungsi == 2) { 
+                swals.fire('Happy Birthday ' + (window.nama || 'Bhuntu') + '! ❤️', 'Wishing you all the joy, love, and happiness in the world! 🥰✨', 'success'); 
+            } 
+        }
 
         const waktuSekarang = new Date().getHours(); let ucapan;
         if (waktuSekarang < 10) { ucapan = "Good Morning, "; }
