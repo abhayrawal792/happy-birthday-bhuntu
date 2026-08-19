@@ -646,24 +646,23 @@
             var { value: nama } = await swals.fire({
                 title: 'Enter your name ❤️',
                 input: 'text',
-                inputValue: 'Bhuntu',
-                inputPlaceholder: 'Bhuntu, Sana, Babe',
+                inputPlaceholder: 'Type your name here...',
                 confirmButtonText: 'Continue ✨',
                 showCancelButton: false,
             });
-            if (!nama || nama.trim() === '') {
-                nama = 'Bhuntu';
-            }
-            if (nama && nama.length <= 30) {
-                window.nama = nama;
-                vketikhalo = "Hi, " + nama + " &#10084;";
-                await swals.fire('Hi, ' + nama + ' 🥰');
+            if (nama && nama.trim().length > 0 && nama.trim().length <= 30) {
+                window.nama = nama.trim();
+                vketikhalo = "Hi, " + window.nama + " &#10084;";
+                await swals.fire('Hi, ' + window.nama + ' 🥰');
                 await swals.fire('It\'s your special birthday today! 🎂');
-                await swals.fire('Happy Birthday Bhuntu, Sana, Babe! 🎉✨');
+                await swals.fire('Happy Birthday ' + window.nama + '! 🎉✨');
                 await swals.fire('Wishing you endless happiness, joy and love ❤️');
                 pilihwarna();
-            } else {
+            } else if (nama && nama.trim().length > 30) {
                 await swals.fire('Oops!', 'Name is too long! (Max 30 characters)');
+                inipesan();
+            } else {
+                await swals.fire('Oops!', 'Please enter your name first! 🥰');
                 inipesan();
             }
         }
