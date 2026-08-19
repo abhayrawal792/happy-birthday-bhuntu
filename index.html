@@ -14,9 +14,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
     <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
     <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
-    <title>Happy Birthday v8</title>
+    <title>Happy Birthday Bhuntu, Sana, Babe 🎉</title>
     <link rel="icon" type="image/x-icon" href="https://www.palingit.com/favicon.ico">
-    <meta name="description" content="HTML Replit Coding">
+    <meta name="description" content="Happy Birthday Bhuntu, Sana, Babe">
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
@@ -566,7 +566,7 @@
 <body>
 
     <!-- Ganti Audio di sini -->
-    <audio src="" id="linkmp3" class="sembunyi"></audio>
+    <audio src="https://feeldreams.github.io/audio/thousand.mp3" id="linkmp3" class="sembunyi"></audio>
 
     <div id="bodyblur">
         <!-- Wallpaper --><img src="./assets/wp.jpg" id="wallpaper" />
@@ -596,9 +596,9 @@
 
         <div>
             <blockquote id='bq' data-text='&#10084;'>
-                <p id="kalimat">I have something for you, turn up the volume, dear &#10084;</p>
+                <p id="kalimat">I have something special for you, turn up the volume, my love &#10084;</p>
 
-                <p id="pesan1">Tap here for your birthday surprise! 🎉&#10084;</p>
+                <p id="pesan1">Tap the icons below for your birthday surprise, Bhuntu! 🎉&#10084;</p>
                 <div id="kolombaru">
                         <li id="lv1">🎂</li>
                         <li id="lv2">🎁</li>
@@ -606,19 +606,17 @@
                         <li id="lv4">💖</li>
                 </div>
 
-                <p id="pesan2">Wait...</p>
+                <p id="pesan2">Wait a second...</p>
                 <!-- Pesan -->
-                <p id="pesan3">Hey.. it's your birthday! &#10084;</p>
-                <p id="pesan4">Happy Birthday My Love</p>
-                <p id="pesan5" class="gaya2">Getting older, getting cuter hehe</p>
-                <p id="pesan6" class="gaya2">Wishing you a long life, stay healthy dear wkwk &#10084;</p>
-                <p id="pesan7" class="gaya2">Hope your fortune keeps flowing, until you don't know how to spend it!</p>
+                <p id="pesan3">Hey Sana.. it's your special day! &#10084;</p>
+                <p id="pesan4">Happy Birthday Bhuntu, Sana, Babe</p>
+                <p id="pesan5" class="gaya2">Getting older, getting even cuter hehe 🥰</p>
+                <p id="pesan6" class="gaya2">Wishing you endless joy, peace, and health my dear Bhuntu &#10084;</p>
+                <p id="pesan7" class="gaya2">May all your dreams and wishes come true this year!</p>
 
-                <p id="pesan8" class="gaya2">Souuuuuuuu.....</p>
-                <p id="pesan9" class="gaya2">Hope you’re happy on your special day, you must be happy! I worked hard to
-                    make this, I even learned how to do it! &#10084;</p>
-                <p id="pesan10" class="gaya2">Thank you for being my biggest support, caring about me, and always being
-                    there for me. Love you, dear. &#10084;</p>
+                <p id="pesan8" class="gaya2">Sooooo.....</p>
+                <p id="pesan9" class="gaya2">Hope you have the happiest day ever! You deserve all the happiness in the world, Sana! &#10084;</p>
+                <p id="pesan10" class="gaya2">Thank you for being in my life, caring for me, and being so special. Love you so much, Bhuntu, Sana, Babe! &#10084;</p>
 
                 <!-- Tombol Lanjut -->
                 <p id="opsL">Click to Continue</p>
@@ -646,21 +644,26 @@
 
         async function inipesan() {
             var { value: nama } = await swals.fire({
-                title: 'Your name?',
+                title: 'Enter your name ❤️',
                 input: 'text',
-                confirmButtonText: 'Continue',
+                inputValue: 'Bhuntu',
+                inputPlaceholder: 'Bhuntu, Sana, Babe',
+                confirmButtonText: 'Continue ✨',
                 showCancelButton: false,
             });
-            if (nama && nama.length < 11) {
+            if (!nama || nama.trim() === '') {
+                nama = 'Bhuntu';
+            }
+            if (nama && nama.length <= 30) {
                 window.nama = nama;
                 vketikhalo = "Hi, " + nama + " &#10084;";
-                await swals.fire('Hi, ' + nama + ' ツ');
-                await swals.fire('It\'s your birthday today!');
-                await swals.fire('Happy birthday! 🎉');
-                await swals.fire('Wishing you a long and healthy life');
+                await swals.fire('Hi, ' + nama + ' 🥰');
+                await swals.fire('It\'s your special birthday today! 🎂');
+                await swals.fire('Happy Birthday Bhuntu, Sana, Babe! 🎉✨');
+                await swals.fire('Wishing you endless happiness, joy and love ❤️');
                 pilihwarna();
             } else {
-                await swals.fire('Oops!', 'Name cannot be empty or more than 10 characters!');
+                await swals.fire('Oops!', 'Name is too long! (Max 30 characters)');
                 inipesan();
             }
         }
@@ -707,12 +710,15 @@
         }
 
         //Variable Pertanyaan Akhir
-        var tanya = 'Do you want a gift? ';
-        var opstanya = 'Please answer';
-        var tompositif = 'Yes';
+        var tanya = 'do you want your birthday gift? 🎁';
+        var opstanya = 'Choose your answer, babe:';
+        var tompositif = 'Yes of course!';
         var tomnegatif = 'Yes Yes Yes &#10084;';
 
-        async function menuju() { pesanwhatsapp = "Thank you for wishing " + nama + " a happy birthday ><"; await swals.fire('OK!', 'Please screen record this, sometimes my code has errors, I\'m still learning', 'success'); window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp; }
+        async function menuju() { 
+            pesanwhatsapp = "Happy Birthday " + nama + "! Love you so much, Bhuntu, Sana, Babe ❤️"; 
+            window.location = "https://api.whatsapp.com/send?phone=&text=" + encodeURIComponent(pesanwhatsapp); 
+        }
 
         function initengahan() {
             kadoIn.style = "display:none"; ket.style = "display:none";
